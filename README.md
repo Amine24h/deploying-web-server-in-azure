@@ -37,8 +37,8 @@ This project combines Packer, Terraform
     ```
 5. Create and deploy a Packer image:
     ``` bash
-    packer validate PackerTemplate.json
-    packer build PackerTemplate.json
+    packer validate server.json
+    packer build server.json
     ```
 6. Customizing the Terraform template: The Terraform template is composed of two files:
    - [vars.tf](vars.tf) file: contains all the variables that help you customize the template such as:
