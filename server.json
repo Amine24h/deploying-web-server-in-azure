@@ -1,0 +1,39 @@
+{
+	"variables": {
+		"client_id": "5ea9f619-10e1-4c41-adb6-8974fb3b76e1",
+		"client_secret": "bMyNjbpJ_0KEck_db-vEgGOjcEs8GD2AYG",
+        "tenant_id": "6b078323-48a3-4013-ba4c-883cf9766d91",
+		"subscription_id": "3b2b4316-967b-44a8-9c2f-9f5ff31f09cb"
+	},
+	"builders": [{
+        "type": "azure-arm",
+    
+        "client_id": "{{user `client_id`}}",
+		"client_secret": "{{user `client_secret`}}",
+		"subscription_id": "{{user `subscription_id`}}",
+    
+        "os_type": "Linux",
+        "image_publisher": "Canonical",
+        "image_offer": "UbuntuServer",
+        "image_sku": "18.04-LTS",
+    
+        "managed_image_resource_group_name": "udacity-project-dawsia-rg",
+        "managed_image_name": "dawsiaPackerImage",
+    
+        "location": "West Europe",
+        "vm_size": "Standard_DS2_v2",
+  
+        "azure_tags": {
+          "environment": "Dev"
+        }
+      }],
+	"provisioners": [{
+		"inline": [
+			"sudo apt update",
+			"sudo apt-get install -y apache2",
+			"echo 'Hello, World!' | sudo tee /var/www/html/index.html"
+		],
+		"inline_shebang": "/bin/sh -x",
+		"type": "shell"
+	}]
+}
