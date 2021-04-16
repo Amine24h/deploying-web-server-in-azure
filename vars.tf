@@ -1,9 +1,11 @@
 variable "prefix" {
   description = "The prefix which should be used for all resources in this example"
+  default = "aka"
 }
 
 variable "vmcount" {
   description = "The number of VMs to be created in this example"
+  default = 2
 }
 
 variable "location" {
@@ -13,10 +15,12 @@ variable "location" {
 
 variable "username" {
   description = "The vm username."
+  default = "amine.kabouche"
 }
 
 variable "password" {
   description = "The vm password."
+  default = "Test.2020"
 }
 
 variable "packer-image-rg-name" {
