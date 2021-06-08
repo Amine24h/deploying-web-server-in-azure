@@ -1,16 +1,16 @@
 {
 	"variables": {
-		"client_id": "5ea9f619-10e1-4c41-adb6-8974fb3b76e1",
-		"client_secret": "bMyNjbpJ_0KEck_db-vEgGOjcEs8GD2AYG",
-        "tenant_id": "6b078323-48a3-4013-ba4c-883cf9766d91",
-		"subscription_id": "3b2b4316-967b-44a8-9c2f-9f5ff31f09cb"
+		"client_id": "{{env `ARM_CLIENT_ID`}}",
+		"client_secret": "{{env `ARM_CLIENT_SECRET`}}",
+		"tenant_id": "{{env `ARM_CLIENT_TENANT`}}",
+		"subscription_id": "{{env `ARM_SUBSCRIPTION_ID`}}"
 	},
 	"builders": [{
         "type": "azure-arm",
     
         "client_id": "{{user `client_id`}}",
-		"client_secret": "{{user `client_secret`}}",
-		"subscription_id": "{{user `subscription_id`}}",
+	"client_secret": "{{user `client_secret`}}",
+	"subscription_id": "{{user `subscription_id`}}",
     
         "os_type": "Linux",
         "image_publisher": "Canonical",
